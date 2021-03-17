@@ -1,0 +1,12 @@
+﻿Shortcut Keys:
+
+Save: Ctrl + S	(done)
+Create new doc in this window: Ctrl + N 
+Create new doc in new window:
+Save all docs in this window:
+Close App: Alt + F4	  (done)
+
+***
+Ctrl + Z
+Ctrl + Shift + Z
+

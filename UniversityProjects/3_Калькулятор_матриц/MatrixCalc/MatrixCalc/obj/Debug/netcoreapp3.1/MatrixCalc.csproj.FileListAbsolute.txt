@@ -1,0 +1,13 @@
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\bin\Debug\netcoreapp3.1\MatrixCalc.exe
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\bin\Debug\netcoreapp3.1\MatrixCalc.deps.json
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\bin\Debug\netcoreapp3.1\MatrixCalc.runtimeconfig.json
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\bin\Debug\netcoreapp3.1\MatrixCalc.runtimeconfig.dev.json
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\bin\Debug\netcoreapp3.1\MatrixCalc.dll
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\bin\Debug\netcoreapp3.1\MatrixCalc.pdb
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\obj\Debug\netcoreapp3.1\MatrixCalc.csprojAssemblyReference.cache
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\obj\Debug\netcoreapp3.1\MatrixCalc.AssemblyInfoInputs.cache
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\obj\Debug\netcoreapp3.1\MatrixCalc.AssemblyInfo.cs
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\obj\Debug\netcoreapp3.1\MatrixCalc.csproj.CoreCompileInputs.cache
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\obj\Debug\netcoreapp3.1\MatrixCalc.dll
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\obj\Debug\netcoreapp3.1\MatrixCalc.pdb
+D:\прога_взаимноеоценивание\MatrixCalc\MatrixCalc\obj\Debug\netcoreapp3.1\MatrixCalc.genruntimeconfig.cache

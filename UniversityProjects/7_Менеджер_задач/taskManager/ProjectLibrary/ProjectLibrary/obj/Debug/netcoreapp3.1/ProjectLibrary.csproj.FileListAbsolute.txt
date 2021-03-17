@@ -1,0 +1,10 @@
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\bin\Debug\netcoreapp3.1\ProjectLibrary.deps.json
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\bin\Debug\netcoreapp3.1\ProjectLibrary.dll
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\bin\Debug\netcoreapp3.1\ProjectLibrary.pdb
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\obj\Debug\netcoreapp3.1\ProjectLibrary.csprojAssemblyReference.cache
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\obj\Debug\netcoreapp3.1\ProjectLibrary.AssemblyInfoInputs.cache
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\obj\Debug\netcoreapp3.1\ProjectLibrary.AssemblyInfo.cs
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\obj\Debug\netcoreapp3.1\ProjectLibrary.csproj.CoreCompileInputs.cache
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\obj\Debug\netcoreapp3.1\ProjectLibrary.dll
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\obj\Debug\netcoreapp3.1\ProjectLibrary.pdb
+D:\прога_взаимноеоценивание\taskManager\ProjectLibrary\ProjectLibrary\obj\Debug\netcoreapp3.1\ProjectLibrary.csproj.ResolveComReference.cache

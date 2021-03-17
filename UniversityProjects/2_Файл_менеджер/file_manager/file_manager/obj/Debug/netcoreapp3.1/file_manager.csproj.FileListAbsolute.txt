@@ -1,0 +1,13 @@
+D:\прога_взаимноеоценивание\file_manager\file_manager\bin\Debug\netcoreapp3.1\file_manager.exe
+D:\прога_взаимноеоценивание\file_manager\file_manager\bin\Debug\netcoreapp3.1\file_manager.deps.json
+D:\прога_взаимноеоценивание\file_manager\file_manager\bin\Debug\netcoreapp3.1\file_manager.runtimeconfig.json
+D:\прога_взаимноеоценивание\file_manager\file_manager\bin\Debug\netcoreapp3.1\file_manager.runtimeconfig.dev.json
+D:\прога_взаимноеоценивание\file_manager\file_manager\bin\Debug\netcoreapp3.1\file_manager.dll
+D:\прога_взаимноеоценивание\file_manager\file_manager\bin\Debug\netcoreapp3.1\file_manager.pdb
+D:\прога_взаимноеоценивание\file_manager\file_manager\obj\Debug\netcoreapp3.1\file_manager.csprojAssemblyReference.cache
+D:\прога_взаимноеоценивание\file_manager\file_manager\obj\Debug\netcoreapp3.1\file_manager.AssemblyInfoInputs.cache
+D:\прога_взаимноеоценивание\file_manager\file_manager\obj\Debug\netcoreapp3.1\file_manager.AssemblyInfo.cs
+D:\прога_взаимноеоценивание\file_manager\file_manager\obj\Debug\netcoreapp3.1\file_manager.csproj.CoreCompileInputs.cache
+D:\прога_взаимноеоценивание\file_manager\file_manager\obj\Debug\netcoreapp3.1\file_manager.dll
+D:\прога_взаимноеоценивание\file_manager\file_manager\obj\Debug\netcoreapp3.1\file_manager.pdb
+D:\прога_взаимноеоценивание\file_manager\file_manager\obj\Debug\netcoreapp3.1\file_manager.genruntimeconfig.cache

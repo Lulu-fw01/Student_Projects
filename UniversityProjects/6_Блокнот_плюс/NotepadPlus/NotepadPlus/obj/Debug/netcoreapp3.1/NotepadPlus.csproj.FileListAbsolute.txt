@@ -1,0 +1,17 @@
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\bin\Debug\netcoreapp3.1\NotepadPlus.exe
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\bin\Debug\netcoreapp3.1\NotepadPlus.deps.json
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\bin\Debug\netcoreapp3.1\NotepadPlus.runtimeconfig.json
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\bin\Debug\netcoreapp3.1\NotepadPlus.runtimeconfig.dev.json
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\bin\Debug\netcoreapp3.1\NotepadPlus.dll
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\bin\Debug\netcoreapp3.1\NotepadPlus.pdb
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.csprojAssemblyReference.cache
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.Form1.resources
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.csproj.GenerateResource.cache
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.AssemblyInfoInputs.cache
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.AssemblyInfo.cs
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.csproj.CoreCompileInputs.cache
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.dll
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.pdb
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.genruntimeconfig.cache
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.Properties.Resources.resources
+D:\прога_взаимноеоценивание\NotepadPlus\NotepadPlus\NotepadPlus\obj\Debug\netcoreapp3.1\NotepadPlus.CloseForm.resources

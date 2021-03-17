@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="AddSubtaskForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="addTaskToProj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="AllArtistsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="ChangeProjectNameForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditEpicForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditStoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="EditTaskBugForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NewArtistForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="NewProjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

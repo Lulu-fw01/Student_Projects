@@ -1,0 +1,13 @@
+D:\прога_взаимноеоценивание\warehouse\warehouse\bin\Debug\netcoreapp3.1\warehouse.exe
+D:\прога_взаимноеоценивание\warehouse\warehouse\bin\Debug\netcoreapp3.1\warehouse.deps.json
+D:\прога_взаимноеоценивание\warehouse\warehouse\bin\Debug\netcoreapp3.1\warehouse.runtimeconfig.json
+D:\прога_взаимноеоценивание\warehouse\warehouse\bin\Debug\netcoreapp3.1\warehouse.runtimeconfig.dev.json
+D:\прога_взаимноеоценивание\warehouse\warehouse\bin\Debug\netcoreapp3.1\warehouse.dll
+D:\прога_взаимноеоценивание\warehouse\warehouse\bin\Debug\netcoreapp3.1\warehouse.pdb
+D:\прога_взаимноеоценивание\warehouse\warehouse\obj\Debug\netcoreapp3.1\warehouse.csprojAssemblyReference.cache
+D:\прога_взаимноеоценивание\warehouse\warehouse\obj\Debug\netcoreapp3.1\warehouse.AssemblyInfoInputs.cache
+D:\прога_взаимноеоценивание\warehouse\warehouse\obj\Debug\netcoreapp3.1\warehouse.AssemblyInfo.cs
+D:\прога_взаимноеоценивание\warehouse\warehouse\obj\Debug\netcoreapp3.1\warehouse.csproj.CoreCompileInputs.cache
+D:\прога_взаимноеоценивание\warehouse\warehouse\obj\Debug\netcoreapp3.1\warehouse.dll
+D:\прога_взаимноеоценивание\warehouse\warehouse\obj\Debug\netcoreapp3.1\warehouse.pdb
+D:\прога_взаимноеоценивание\warehouse\warehouse\obj\Debug\netcoreapp3.1\warehouse.genruntimeconfig.cache

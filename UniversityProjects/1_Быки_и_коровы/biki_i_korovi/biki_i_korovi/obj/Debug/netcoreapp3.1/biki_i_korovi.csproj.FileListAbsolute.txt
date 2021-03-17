@@ -1,0 +1,13 @@
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\bin\Debug\netcoreapp3.1\biki_i_korovi.exe
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\bin\Debug\netcoreapp3.1\biki_i_korovi.deps.json
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\bin\Debug\netcoreapp3.1\biki_i_korovi.runtimeconfig.json
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\bin\Debug\netcoreapp3.1\biki_i_korovi.runtimeconfig.dev.json
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\bin\Debug\netcoreapp3.1\biki_i_korovi.dll
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\bin\Debug\netcoreapp3.1\biki_i_korovi.pdb
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\obj\Debug\netcoreapp3.1\biki_i_korovi.csprojAssemblyReference.cache
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\obj\Debug\netcoreapp3.1\biki_i_korovi.AssemblyInfoInputs.cache
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\obj\Debug\netcoreapp3.1\biki_i_korovi.AssemblyInfo.cs
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\obj\Debug\netcoreapp3.1\biki_i_korovi.csproj.CoreCompileInputs.cache
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\obj\Debug\netcoreapp3.1\biki_i_korovi.dll
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\obj\Debug\netcoreapp3.1\biki_i_korovi.pdb
+D:\прога_взаимноеоценивание\biki_i_korovi\biki_i_korovi\obj\Debug\netcoreapp3.1\biki_i_korovi.genruntimeconfig.cache
