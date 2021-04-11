@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\прога_взаимноеоценивание\\fractalsApp\\fractalsApp\\fractalsApp\\fractalsApp.csproj",
+      "projectUniqueName": "D:\\my_programms\\Student_Projects\\UniversityProjects\\5_Фракталы\\fractalsApp\\fractalsApp\\fractalsApp.csproj",
       "projectName": "fractalsApp",
-      "projectPath": "D:\\прога_взаимноеоценивание\\fractalsApp\\fractalsApp\\fractalsApp\\fractalsApp.csproj",
+      "projectPath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\5_Фракталы\\fractalsApp\\fractalsApp\\fractalsApp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\прога_взаимноеоценивание\\fractalsApp\\fractalsApp\\fractalsApp\\obj\\",
+      "outputPath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\5_Фракталы\\fractalsApp\\fractalsApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

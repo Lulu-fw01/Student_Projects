@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\прога_взаимноеоценивание\\taskManager\\TaskManagerApp\\TaskManagerApp\\TaskManagerApp.csproj",
+      "projectUniqueName": "D:\\my_programms\\Student_Projects\\UniversityProjects\\7_Менеджер_задач\\taskManager\\TaskManagerApp\\TaskManagerApp\\TaskManagerApp.csproj",
       "projectName": "TaskManagerApp",
-      "projectPath": "D:\\прога_взаимноеоценивание\\taskManager\\TaskManagerApp\\TaskManagerApp\\TaskManagerApp.csproj",
+      "projectPath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\7_Менеджер_задач\\taskManager\\TaskManagerApp\\TaskManagerApp\\TaskManagerApp.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\прога_взаимноеоценивание\\taskManager\\TaskManagerApp\\TaskManagerApp\\obj\\",
+      "outputPath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\7_Менеджер_задач\\taskManager\\TaskManagerApp\\TaskManagerApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
