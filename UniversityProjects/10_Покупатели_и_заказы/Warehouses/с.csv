@@ -1,0 +1,19 @@
+path,SKU,Name,Num in stock
+:Shoes/Gumshoes/,Sn.Gu.Co.1,Convers Chuck,5
+:Shoes/Gumshoes/,Sn.Gu.Co.2,Converse x fear of god,2
+:Clothes/Tees/,cl.ts.adyy,Adidas real Madrid,4
+:Shoes/Sneakers/,Sn.Sn.Sa.1,Salomon sneakers,1
+:Shoes/Sneakers/,Sn.Sn.Ad.1,Adidas SATD,12
+:Shoes/Sneakers/,Sn.Sn.Ni.1,Nike Air Presto,8
+:Accessories/Hats/,ac.ha.1,Lacoste binnie,2
+:Accessories/Bags/,Ac.ba.CDG.1,CDG Bag,3
+:Accessories/Bags/,Ac.Ba.Ev.2,Evisu BackPack,3
+:Clothes/Polos/,Cl.Po.Fp.1,Fred Perry Polo ,1
+:Clothes/Hoodies/Hoodies/,cl.Ho.CDG.1,CDG Hoodie,0
+:Clothes/T-shirts/,cl.ts.1,Evisu T-shirt,0
+:Clothes/T-shirts/,cl.ts.2,CDG T-shirt,3
+:Clothes/Jackets/,cl.ja.TNF.1,TNF Neptuse,7
+:Clothes/Jackets/,cl.ja.ad.1,adidas 424 jscket,3
+:Clothes/Jackets/,cl.ja.hh.3,Helly hansen jacket,4
+:Clothes/Longsleeves/,cl.lo.bbc.1,BBc Longsleeve,4
+:Accessories/Another/,cl.an.ca.1,iphone Case,5
