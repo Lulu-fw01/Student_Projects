@@ -23,11 +23,16 @@ namespace Product_Warehouse
         /// </summary>
         public string Adress { get; set; }
 
+        /// <summary>
+        /// Номер телефона пользователя.
+        /// </summary>
+        public string PhoneNumber { get; set; }
         public Customer(string login, string password):base(login, password)
         { }
 
-        public Customer(string login, string password, FullUserName fullName, string adress ): base(login, password)
+        public Customer(string login, string password, string phoneNumber, FullUserName fullName, string adress ): base(login, password)
         {
+            PhoneNumber = phoneNumber;
             FullName = fullName;
             Adress = adress;
         }

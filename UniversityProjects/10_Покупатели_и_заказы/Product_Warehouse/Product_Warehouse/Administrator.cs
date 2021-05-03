@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Product_Warehouse
 {
+    /// <summary>
+    /// Класс описывающий администратора.
+    /// </summary>
     [Serializable]
     class Administrator :BaseUser
     {

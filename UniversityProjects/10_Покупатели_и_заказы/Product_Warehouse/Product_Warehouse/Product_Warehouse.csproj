@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Administrator.cs" />
+    <Compile Include="BaseUser.cs" />
     <Compile Include="CSVNumForm.cs">
       <SubType>Form</SubType>
     </Compile>

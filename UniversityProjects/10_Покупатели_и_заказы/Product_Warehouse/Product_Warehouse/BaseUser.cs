@@ -7,6 +7,9 @@ using System.Security.Cryptography;
 
 namespace Product_Warehouse
 {
+    /// <summary>
+    /// Класс для описания базовых свойств и методов пользователя.
+    /// </summary>
     abstract class BaseUser: IUser
     {
         /// <summary>
@@ -24,6 +27,7 @@ namespace Product_Warehouse
 
         static BaseUser()
         {
+            // Используем алгоритм SHA256.
             hashAlgorithm = new SHA256CryptoServiceProvider();
         }
 
@@ -48,20 +52,12 @@ namespace Product_Warehouse
         public BaseUser(string login, string password)
         {
             this.login = login;
-            this.password = password;
+            SetPassword(password);
         }
 
-        /// <summary>
-        /// Проверка пароля.
-        /// </summary>
-        /// <param name="inputPassword"></param>
-        /// <returns></returns>
+        
         public bool CheckPassword(string inputPassword) => password == GetHashPassword(inputPassword);
         
-        /// <summary>
-        /// Установка пароля.
-        /// </summary>
-        /// <param name="newInputPassword"></param>
         public void SetPassword(string newInputPassword) => password = GetHashPassword(newInputPassword);
         
         /// <summary>
