@@ -43,8 +43,11 @@ namespace Product_Warehouse
             this.editButton = new System.Windows.Forms.Button();
             this.deleteButton = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.addToCartBtn = new System.Windows.Forms.Button();
+            this.toCartNud = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toCartNud)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -214,11 +217,41 @@ namespace Product_Warehouse
             this.pictureBox.TabIndex = 6;
             this.pictureBox.TabStop = false;
             // 
+            // addToCartBtn
+            // 
+            this.addToCartBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.addToCartBtn.Location = new System.Drawing.Point(139, 3);
+            this.addToCartBtn.Name = "addToCartBtn";
+            this.addToCartBtn.Size = new System.Drawing.Size(75, 50);
+            this.addToCartBtn.TabIndex = 7;
+            this.addToCartBtn.Text = "Add to cart";
+            this.addToCartBtn.UseVisualStyleBackColor = false;
+            this.addToCartBtn.Click += new System.EventHandler(this.addToCartBtn_Click);
+            // 
+            // toCartNud
+            // 
+            this.toCartNud.Location = new System.Drawing.Point(139, 59);
+            this.toCartNud.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.toCartNud.Name = "toCartNud";
+            this.toCartNud.Size = new System.Drawing.Size(71, 22);
+            this.toCartNud.TabIndex = 10;
+            this.toCartNud.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
             // ProductControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.Controls.Add(this.toCartNud);
+            this.Controls.Add(this.addToCartBtn);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.editButton);
@@ -228,6 +261,7 @@ namespace Product_Warehouse
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.toCartNud)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +281,7 @@ namespace Product_Warehouse
         private System.Windows.Forms.Label priceLabel;
         private System.Windows.Forms.Label numLabel;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button addToCartBtn;
+        private System.Windows.Forms.NumericUpDown toCartNud;
     }
 }

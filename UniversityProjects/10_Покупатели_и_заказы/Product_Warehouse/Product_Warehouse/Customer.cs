@@ -10,7 +10,7 @@ namespace Product_Warehouse
     /// Класс, описывающий покупателя.
     /// </summary>
     [Serializable]
-    class Customer:BaseUser
+    public class Customer:BaseUser
     {
        
         /// <summary>

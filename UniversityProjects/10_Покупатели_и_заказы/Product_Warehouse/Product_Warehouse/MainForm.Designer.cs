@@ -52,6 +52,13 @@ namespace Product_Warehouse
             this.deleteSelectedNodeTsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.addProductButton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.accountTs = new System.Windows.Forms.ToolStrip();
+            this.cartBtn = new System.Windows.Forms.ToolStripButton();
+            this.accountDDBtn = new System.Windows.Forms.ToolStripDropDownButton();
+            this.checkOrdersTsmi = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.loginTsmi = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.mainFlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.saveCsvFileDialog = new System.Windows.Forms.SaveFileDialog();
@@ -61,6 +68,8 @@ namespace Product_Warehouse
             this.menuStrip2.SuspendLayout();
             this.nodeTreeContextMenuStrip.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.accountTs.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -239,6 +248,7 @@ namespace Product_Warehouse
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.groupBox2.Controls.Add(this.groupBox3);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.mainFlowLayoutPanel);
             this.groupBox2.Controls.Add(this.addProductButton);
@@ -249,10 +259,75 @@ namespace Product_Warehouse
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Items:";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox3.Controls.Add(this.accountTs);
+            this.groupBox3.Location = new System.Drawing.Point(270, 0);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(238, 46);
+            this.groupBox3.TabIndex = 2;
+            this.groupBox3.TabStop = false;
+            // 
+            // accountTs
+            // 
+            this.accountTs.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.accountTs.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cartBtn,
+            this.accountDDBtn});
+            this.accountTs.Location = new System.Drawing.Point(3, 18);
+            this.accountTs.Name = "accountTs";
+            this.accountTs.Size = new System.Drawing.Size(232, 27);
+            this.accountTs.TabIndex = 0;
+            this.accountTs.Text = "toolStrip1";
+            // 
+            // cartBtn
+            // 
+            this.cartBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.cartBtn.Image = global::Product_Warehouse.Properties.Resources.cart_icon;
+            this.cartBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.cartBtn.Name = "cartBtn";
+            this.cartBtn.Size = new System.Drawing.Size(29, 24);
+            this.cartBtn.Text = "toolStripButton1";
+            this.cartBtn.Click += new System.EventHandler(this.cartBtn_Click);
+            // 
+            // accountDDBtn
+            // 
+            this.accountDDBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.accountDDBtn.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.checkOrdersTsmi,
+            this.exitToolStripMenuItem,
+            this.loginTsmi});
+            this.accountDDBtn.Image = global::Product_Warehouse.Properties.Resources.account_icon;
+            this.accountDDBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.accountDDBtn.Name = "accountDDBtn";
+            this.accountDDBtn.Size = new System.Drawing.Size(34, 24);
+            this.accountDDBtn.Text = "toolStripDropDownButton1";
+            // 
+            // checkOrdersTsmi
+            // 
+            this.checkOrdersTsmi.Name = "checkOrdersTsmi";
+            this.checkOrdersTsmi.Size = new System.Drawing.Size(224, 26);
+            this.checkOrdersTsmi.Text = "Check orders";
+            this.checkOrdersTsmi.Click += new System.EventHandler(this.checkOrdersTsmi_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Text = "exit";
+            // 
+            // loginTsmi
+            // 
+            this.loginTsmi.Name = "loginTsmi";
+            this.loginTsmi.Size = new System.Drawing.Size(224, 26);
+            this.loginTsmi.Text = "Login";
+            this.loginTsmi.Click += new System.EventHandler(this.loginTsmi_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(125, 22);
+            this.label1.Location = new System.Drawing.Point(108, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 17);
             this.label1.TabIndex = 1;
@@ -295,6 +370,10 @@ namespace Product_Warehouse
             this.nodeTreeContextMenuStrip.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.accountTs.ResumeLayout(false);
+            this.accountTs.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -306,9 +385,6 @@ namespace Product_Warehouse
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.FlowLayoutPanel mainFlowLayoutPanel;
         private System.Windows.Forms.TreeView mainTreeView;
-        private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createNewWarehouseToolStripMenuItem;
         private System.Windows.Forms.ContextMenuStrip nodeTreeContextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem addNewCategoryTsmi;
         private System.Windows.Forms.ToolStripMenuItem addSubcategoryTsmi;
@@ -317,16 +393,26 @@ namespace Product_Warehouse
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ToolStripMenuItem changeNameTsmi;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripMenuItem cSVReportToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveCsvFileDialog;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripMenuItem saveWarehouseToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadWarehouseToolStripMenuItem;
         private System.Windows.Forms.OpenFileDialog openWarehouseFD;
         private System.Windows.Forms.SaveFileDialog saveWarehouseFD;
-        private System.Windows.Forms.ToolStripMenuItem createNewWarehouseToolStripMenuItem1;
+        private System.Windows.Forms.MenuStrip menuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewWarehouseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem cSVReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem saveWarehouseAsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem saveWarehouseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loadWarehouseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createNewWarehouseToolStripMenuItem1;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ToolStrip accountTs;
+        private System.Windows.Forms.ToolStripButton cartBtn;
+        private System.Windows.Forms.ToolStripDropDownButton accountDDBtn;
+        private System.Windows.Forms.ToolStripMenuItem checkOrdersTsmi;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem loginTsmi;
     }
 }
 

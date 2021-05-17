@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "lBBEAleV+cwF9gAW2f81mcn+0rP1C95PVuT2ub4JqDigm6gz9/U1SzFU7i4oFEUGPvhgv+PGioSZUA3vlQjRPg==",
+  "dgSpecHash": "n1Co+VgrZzJcM/krzW4bjXhEMc8S22BucHmdM5OSBZQ1Teeca0taxisHiqnSefXZp8i4i3lGzmDvHMaJLy6jxA==",
   "success": true,
   "projectFilePath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\7_Менеджер_задач\\taskManager\\TaskManagerApp\\TaskManagerApp\\TaskManagerApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.13\\microsoft.netcore.app.host.win-x64.3.1.13.nupkg.sha512"
+  ],
   "logs": []
 }

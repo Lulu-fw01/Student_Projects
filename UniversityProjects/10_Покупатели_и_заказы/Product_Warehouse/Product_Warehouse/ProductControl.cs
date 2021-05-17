@@ -115,6 +115,85 @@ namespace Product_Warehouse
         /// </summary>
         public Action ChangesUnsaved;
 
+        /// <summary>
+        /// Нажатие на кнопку добавить в корзину.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void addToCartBtn_Click(object sender, EventArgs e) => AddItemToCart?.Invoke((int)(toCartNud.Value));
+
+        public Action<int> AddItemToCart;
+
+        /// <summary>
+        /// Событие, показывающее, что надо добавить данный продукт в крзину.
+        /// </summary>
+       /* public delegate void AddThisProductToCartEventHandler(ProductControl pc);
+        private event AddThisProductToCartEventHandler _AddThisProductToCart;
+
+        /// <summary>
+        /// Событие, показывающее, что была нажата кнопка добавления в корзину.
+        /// </summary>
+        public event RemoveThisControlEventHandler AddThisProductToCart
+        {
+            remove
+            {
+                var il = _AddThisProductToCart.GetInvocationList();
+                if (il.Contains(value))
+                    _AddThisProductToCart -= value;
+            }
+
+            add
+            {
+                var il = _AddThisProductToCart.GetInvocationList();
+                if (!il.Contains(value))
+                    _AddThisProductToCart += value;
+            }
+        }*/
+
+        /// <summary>
+        /// Настройка контроллера под режим посетителя.
+        /// </summary>
+        public void SetVisitorMode()
+        {
+            addToCartBtn.Visible = false;
+            editButton.Visible = false;
+            deleteButton.Visible = false;
+            toCartNud.Visible = false;
+        }
+
+        /// <summary>
+        /// Настройка контроллера под режим покупателя.
+        /// </summary>
+        public void SetCustomerMode()
+        {
+            addToCartBtn.Visible = true;
+            editButton.Visible = false;
+            deleteButton.Visible = false;
+            if (int.Parse(numLabel.Text) != 0)
+            {
+                toCartNud.Visible = true;
+                toCartNud.Minimum = 1;
+                toCartNud.Maximum = int.Parse(numLabel.Text);
+                toCartNud.Value = 1;
+            }
+            else
+            {
+                toCartNud.Visible = false;
+                addToCartBtn.Visible = false;
+            }
+        }
+
+        /// <summary>
+        /// Настройка контроллера под режим продавца.
+        /// </summary>
+        public void SetSellerMode()
+        {
+            addToCartBtn.Visible = false;
+            editButton.Visible = true;
+            deleteButton.Visible = true;
+            toCartNud.Visible = false;
+        }
+
 
     }
 }

@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Product_Warehouse
 {
+    [Serializable]
     /// <summary>
     /// Класс для описания полного имени пользователя.
     /// </summary>
-    class FullUserName
+    public class FullUserName
     {
         /// <summary>
         /// Фамилия.

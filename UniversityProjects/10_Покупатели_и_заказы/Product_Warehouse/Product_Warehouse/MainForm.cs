@@ -45,9 +45,43 @@ namespace Product_Warehouse
         /// Переменная, показывающая был ли сохранен склад.
         /// </summary>
         bool saved;
+
+        /// <summary>
+        /// Словарь с закзами.
+        /// </summary>
+        Dictionary<string, Order> orders;
+        /// <summary>
+        /// Покупатели.
+        /// </summary>
+        Dictionary<string, Customer> customers;
+        /// <summary>
+        /// текущий пользователь.
+        /// </summary>
+        BaseUser currentUser;
+        /// <summary>
+        /// Владелец склада, т.е. продавец.
+        /// </summary>
+        Administrator warehouseOwner;
+        UserMode currentMode;
+
+        LoginForm loginForm;
+        RegistrationForm registrationForm;
+
+        CartForm cartForm;
         public MainForm()
         {
             InitializeComponent();
+
+            loginForm = new LoginForm();
+            loginForm.EmailPasswordEntred += CheckAccountLogin;
+            loginForm.VisitorModeSelected = SetVisitorMode;
+            loginForm.CreateNewAccountRequest = CreateNewAccount;
+
+            registrationForm = new RegistrationForm();
+            //registrationForm.ShowDialog();
+            registrationForm.EmailEntred += CheckNewLogin;
+            registrationForm.AddNewCustomer = AddNewCustomer;
+            registrationForm.AddNewSeller = AddNewSeller;
 
             // Устанавливаем максимальный размер формы равный размеру экрана.
             this.MaximumSize = new Size(Screen.PrimaryScreen.WorkingArea.Width, Screen.PrimaryScreen.WorkingArea.Height);
@@ -72,11 +106,157 @@ namespace Product_Warehouse
 
             duwsForm = new DuWSaveW();
             duwsForm.SaveWarehouse = () => saveWarehouseToolStripMenuItem_Click(null, null);
-      
+
             saved = false;
 
-            LoadData();
+            /// Словарь с покупаелями.
+            customers = new Dictionary<string, Customer>();
 
+            currentMode = UserMode.Visitor;
+
+            orders = new Dictionary<string, Order>();
+
+            warehouseOwner = new Administrator("admin123", "admin123");
+
+            cartForm = new CartForm();
+            cartForm.AddNewOrder = AddNewOrder;
+
+            LoadLastSession();
+            currentMode = UserMode.Visitor;
+            SetVisitorMode();
+        }
+
+        /// <summary>
+        /// Добавление нового заказа.
+        /// </summary>
+        /// <param name="items"></param>
+        private void AddNewOrder(Dictionary<string, CartItem> items)
+        {
+            string id = currentUser.Login + DateTime.Now;
+            orders.Add(id, new Order(id, items, currentUser.Login));
+            cartForm = new CartForm();
+            cartForm.AddNewOrder = AddNewOrder;
+        }
+
+        private void CreateNewAccount() => registrationForm.ShowDialog();
+
+        /// <summary>
+        /// Проверка введенного логина и пароля.
+        /// 
+        /// </summary>
+        /// <param name="login"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        private (bool, string) CheckAccountLogin(string login, string password)
+        {
+            try
+            {
+                if (warehouseOwner != null)
+                {
+                    if (login == warehouseOwner.Login)
+                    {
+                        if (warehouseOwner.CheckPassword(password))
+                        {
+                            currentUser = warehouseOwner;
+                            currentMode = UserMode.Adminisrator;
+                            SetSellerMode();
+                            return (true, "Correct");
+                        }
+                        else
+                            return (false, "Wrong password");
+                    }
+                }
+                if (customers.ContainsKey(login))
+                {
+                    if (customers[login].CheckPassword(password))
+                    {
+                        currentUser = customers[login];
+                        currentMode = UserMode.Customer;
+                        SetCustomerMode();
+                        return (true, "Correct");
+                    }
+                    else
+                        return (false, "Wrong password");
+                }
+
+                return (false, "There are no seller or customer with such login");
+            }
+            catch
+            {
+                return (false, "Exception, sorry");
+            }
+        }
+
+        /// <summary>
+        /// Добавление нового покупателя.
+        /// </summary>
+        /// <param name="newCustomer"></param>
+        private void AddNewCustomer(Customer newCustomer)
+        {
+            customers.Add(newCustomer.Login, newCustomer);
+            currentUser = newCustomer;
+            currentMode = UserMode.Customer;
+            SetCustomerMode();
+        }
+
+
+        /// <summary>
+        /// Добавление нового продавца.
+        /// </summary>
+        /// <param name="newSeller"></param>
+        private void AddNewSeller(Administrator newSeller)
+        {
+            createNewWarehouseToolStripMenuItem1_Click(null, null);
+            currentUser = newSeller;
+            warehouseOwner = newSeller;
+            currentMode = UserMode.Adminisrator;
+            SetSellerMode();
+            
+        }
+
+        /// <summary>
+        /// Проверка нового логина.
+        /// </summary>
+        /// <param name="login"></param>
+        /// <returns></returns>
+        private bool CheckNewLogin(string login)
+        {
+            
+            return (customers.ContainsKey(login) || warehouseOwner.Login == login);
+           /* foreach (var e in users)
+            {
+                if (e.Login == login)
+                    return true;
+            }
+            return false;*/
+        }
+
+        /// <summary>
+        /// Установка интерфейса для режима посетителя.
+        /// </summary>
+        private void SetVisitorMode()
+        {
+            currentMode = UserMode.Visitor;
+            nodeTreeContextMenuStrip.Enabled = false;
+            addProductButton.Visible = false;
+        }
+
+        /// <summary>
+        /// Установка интерфейса для режима покупателя.
+        /// </summary>
+        private void SetCustomerMode()
+        {
+            nodeTreeContextMenuStrip.Enabled = false;
+            addProductButton.Visible = false;
+        }
+
+        /// <summary>
+        /// Установка интерфейса для режима продавца.
+        /// </summary>
+        private void SetSellerMode()
+        {
+            nodeTreeContextMenuStrip.Enabled = true;
+            addProductButton.Visible = true;
         }
 
         /// <summary>
@@ -108,6 +288,7 @@ namespace Product_Warehouse
                 if (CheckItemSku(newItem.SKU))
                     throw new ThisItemIsAlreadyExistsException("");
 
+                newItem.AddItemToCart = AddItemToCart;
                 var itemControl = newItem.GetControl();
                 itemControl.RemoveThisControl += RemoveItemFromControls;
                 itemControl.ChangesUnsaved = () => { saved = false; };
@@ -115,12 +296,21 @@ namespace Product_Warehouse
                 warehouseCategories[mainTreeView.SelectedNode.Name].Add(newItem);
                 saved = false;
             }
-            catch (ThisItemIsAlreadyExistsException ex)
+            catch (ThisItemIsAlreadyExistsException)
             {
                 nif.CanClose = false;
             }
-            catch (Exception ex)
+            catch (Exception)
             { }
+        }
+
+        /// <summary>
+        /// Добавление продукта в корзину.
+        /// </summary>
+        /// <param name="i"></param>
+        private void AddItemToCart(CartItem i)
+        {
+            cartForm.AddItemToCart(i);
         }
 
         /// <summary>
@@ -160,6 +350,7 @@ namespace Product_Warehouse
                     {
                         foreach (Item i in e.Value)
                         {
+                            i.AddItemToCart = AddItemToCart;
                             // Получение контроллера продукта.
                             var pc = i.GetControl();
                             // Установка того, что происходит при удалении продукта.
@@ -274,7 +465,7 @@ namespace Product_Warehouse
             {
                 sender.ReadyToClose = false;
             }
-            catch (Exception e)
+            catch (Exception )
             { }
         }
 
@@ -306,7 +497,7 @@ namespace Product_Warehouse
             {
                 sender.ReadyToClose = false;
             }
-            catch (Exception e)
+            catch (Exception )
             { }
         }
 
@@ -380,6 +571,10 @@ namespace Product_Warehouse
                     mainTreeView.Nodes.CopyTo(l, 0);
                     bf.Serialize(fs, l);
                     bf.Serialize(fs, warehouseCategories);
+
+                    bf.Serialize(fs, warehouseOwner);
+                    bf.Serialize(fs, customers);
+                    bf.Serialize(fs, orders);
                 }
                 saved = true; 
             }
@@ -418,7 +613,11 @@ namespace Product_Warehouse
                 {
                     var nodes = (TreeNode[])bf.Deserialize(fs);
                     warehouseCategories = (Dictionary<string, ItemCollection>)bf.Deserialize(fs);
-                    
+
+                    warehouseOwner = (Administrator)bf.Deserialize(fs);
+                    customers = (Dictionary<string, Customer>)bf.Deserialize(fs);
+                    orders = (Dictionary<string, Order>)bf.Deserialize(fs);
+
                     mainTreeView.Nodes.Clear();
                     foreach (TreeNode e in nodes)
                         mainTreeView.Nodes.Add(e);
@@ -467,7 +666,7 @@ namespace Product_Warehouse
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) => SaveData();
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e) => SaveLastSessionWay();
 
 
 
@@ -544,7 +743,7 @@ namespace Product_Warehouse
             {
                 sender.ReadyToClose = false;
             }
-            catch (Exception e)
+            catch (Exception )
             { }
         }
 
@@ -568,7 +767,7 @@ namespace Product_Warehouse
                     }
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             { }
         }
 
@@ -663,7 +862,7 @@ namespace Product_Warehouse
                     if (duwsForm.ShowDialog() == DialogResult.Cancel) return;
                 loadWarehouse();
             }
-            catch(Exception ex)
+            catch(Exception )
             {
                 MessageBox.Show("May be file was damaged");
             }
@@ -680,7 +879,7 @@ namespace Product_Warehouse
                 var path = openWarehouseFD.FileName;
                 LoadData(path);
             }
-            catch(Exception ex)
+            catch(Exception )
             {
                 MessageBox.Show("May be file was damaged");
             }
@@ -703,10 +902,48 @@ namespace Product_Warehouse
                 mainFlowLayoutPanel.Controls.Clear();
                 currentPath = null;
                 saved = false;
-                
+                orders = new Dictionary<string, Order>();
+                customers = new Dictionary<string, Customer>();
+                currentUser = null;
+
             }
             catch { }
 
+        }
+
+        /// <summary>
+        /// Сохранение склада перед выходом.
+        /// </summary>
+        private void SaveLastSessionWay()
+        {
+            try
+            {
+                var fp = Path.GetFullPath("reserves");
+                if (currentPath == null || currentPath == "")
+                {
+                    currentPath = $@"{fp}{Path.DirectorySeparatorChar}lastWarehouse";
+                }
+                File.WriteAllText($@"{fp}{Path.DirectorySeparatorChar}path.txt", currentPath);
+                SaveData(currentPath);
+            }
+            catch { }
+        }
+
+        /// <summary>
+        /// Загрузка последней сессии.
+        /// </summary>
+        private void LoadLastSession()
+        {
+            try
+            {
+                var p = File.ReadAllText($@"reserves{Path.DirectorySeparatorChar}path.txt");
+                LoadData(p);
+                if($@"{Path.GetFullPath("reserves")}{Path.DirectorySeparatorChar}lastWarehouse" == currentPath)
+                {
+                    currentPath = null;
+                }
+            }
+            catch { }
         }
 
         /// <summary>
@@ -727,6 +964,34 @@ namespace Product_Warehouse
             }
             catch { }
             
+        }
+
+        /// <summary>
+        /// Нажатие на кнопку входа.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void loginTsmi_Click(object sender, EventArgs e)
+        {
+            loginForm.ShowDialog();
+        }
+
+        private void checkOrdersTsmi_Click(object sender, EventArgs e)
+        {
+            if(currentMode == UserMode.Customer)
+            {
+                var ords = orders.Values;
+                var thisOrders = from i in ords
+                                 where i.CustomerLogin == currentUser.Login
+                                 select i;
+                var ordersForm = new OrdersForm(thisOrders.ToList());
+                ordersForm.ShowDialog();
+            }
+        }
+
+        private void cartBtn_Click(object sender, EventArgs e)
+        {
+            cartForm.ShowDialog();
         }
     }
 }

@@ -11,7 +11,7 @@ namespace Product_Warehouse
     /// Класс описывающий администратора.
     /// </summary>
     [Serializable]
-    class Administrator :BaseUser
+    public class Administrator :BaseUser
     {
         public Administrator(string login, string password): base(login, password)
         { }

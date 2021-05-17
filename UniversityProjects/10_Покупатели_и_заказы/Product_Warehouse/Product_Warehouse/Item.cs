@@ -128,6 +128,7 @@ namespace Product_Warehouse
             control = new ProductControl(sku, name);
             control.RemoveThisControl += GetRemoveRequest;
             control.EditButtonClicked = () => { ShowEditForm(); };
+            control.AddItemToCart = PrepareitemToCart;
         }
 
 
@@ -162,6 +163,7 @@ namespace Product_Warehouse
                 control.SetImage(Image);
             control.RemoveThisControl += GetRemoveRequest;
             control.EditButtonClicked = () => { ShowEditForm(); };
+            control.AddItemToCart = PrepareitemToCart;
         }
 
         /// <summary>
@@ -194,7 +196,23 @@ namespace Product_Warehouse
             eif.ShowDialog(this);
         }
 
-        
+        /// <summary>
+        /// Получение обЪекта для отображения продукта в корзине.
+        /// </summary>
+        /// <param name="num"></param>
+        /// <returns></returns>
+        public CartItem GetCartItem(int num)
+        {
+            if (num > numInStock)
+                throw new ArgumentException("there are not enought items of this product.");
+            numInStock -= num;
+            return new CartItem(this.SKU, this.name, this.price, num);
+        }
+
+        private void PrepareitemToCart(int num) => AddItemToCart?.Invoke(GetCartItem(num));
+
+        [NonSerialized]
+        public Action<CartItem> AddItemToCart;
     }
 
     
