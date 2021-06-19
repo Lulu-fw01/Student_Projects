@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IsqXUenIh+WZbxOOKjc3maXT+zcOhGnCcI9JfueP6gR/FRnUtC9FELaccJbFQKW9QJe4NEAe5drqYMtnyEOJWg==",
+  "dgSpecHash": "aJKj8zqAYf9jnrTCnVXkm+ejq+eZdpy0GBRItN2Q36/rpJvMJ6P97d4VN6yOyWaTqOpzQHlzMUvrPeCOKmnClQ==",
   "success": true,
-  "projectFilePath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\11\\MessageService\\MessageService\\MessageService.csproj",
+  "projectFilePath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\11_ASP_сервис_сообщений\\MessageService\\MessageService\\MessageService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\User\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

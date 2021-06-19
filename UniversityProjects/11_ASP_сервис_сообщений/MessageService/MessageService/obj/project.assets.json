@@ -241,11 +241,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\my_programms\\Student_Projects\\UniversityProjects\\11\\MessageService\\MessageService\\MessageService.csproj",
+      "projectUniqueName": "D:\\my_programms\\Student_Projects\\UniversityProjects\\11_ASP_сервис_сообщений\\MessageService\\MessageService\\MessageService.csproj",
       "projectName": "MessageService",
-      "projectPath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\11\\MessageService\\MessageService\\MessageService.csproj",
+      "projectPath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\11_ASP_сервис_сообщений\\MessageService\\MessageService\\MessageService.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\11\\MessageService\\MessageService\\obj\\",
+      "outputPath": "D:\\my_programms\\Student_Projects\\UniversityProjects\\11_ASP_сервис_сообщений\\MessageService\\MessageService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

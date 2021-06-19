@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MessageService</name>
+    </assembly>
+    <members>
+        <member name="T:MessageService.Controllers.MessagesController">
+            <summary>
+            Контроллер для работы с сообщениями.
+            </summary>
+        </member>
+        <member name="M:MessageService.Controllers.MessagesController.PostMessages">
+            <summary>
+            Создание рандомных сообщений.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessagesController.GetMessages(System.String,System.String)">
+            <summary>
+            Получение сообщений по Email отправителя и получателя.
+            </summary>
+            <param name="senderEmail">
+            Email отправителя.
+            </param>
+            <param name="receiverEmail">
+            Email получателя. 
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessagesController.GetMessagesBySenderId(System.String)">
+            <summary>
+            Получить сообщения по Email отправителя.
+            </summary>
+            <param name="senderEmail">
+            Email отправителя.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessagesController.GetMessagesByReceiverEmail(System.String)">
+            <summary>
+            Получить сообщения по Email получателя.
+            </summary>
+            <param name="receiverEmail">
+            Email получателя.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.MessagesController.CreateMessage(System.String,System.String,System.String,System.String)">
+            <summary>
+            Создание сообщения.
+            </summary>
+            <param name="senderEmail">
+            Email отправителя.
+            </param>
+            <param name="receiverEmail">
+            Email получателя.
+            </param>
+            <param name="subject">
+            Тема сообщения.
+            </param>
+            <param name="text">
+            Текст сообщения.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:MessageService.Controllers.UsersController">
+            <summary>
+            Контроллер для работы с пользователями.
+            </summary>
+        </member>
+        <member name="M:MessageService.Controllers.UsersController.CreateUsers">
+            <summary>
+            Создание рандомных пользователей.
+            </summary>
+        </member>
+        <member name="M:MessageService.Controllers.UsersController.GetUser(System.String)">
+            <summary>
+            Получение информации о пользователе по Email.
+            </summary>
+            <param name="email">
+            Email пользователя.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.UsersController.GetAllUsers">
+            <summary>
+            Запрос на получение всех пользователей.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.UsersController.GetAllUsers(System.Int32,System.Int32)">
+            <summary>
+            Вернуть несколько пользоваелей, начиная с некоторого.
+            </summary>
+            <param name="offset">
+            Первый индекс диапазона.
+            </param>
+            <param name="limit">
+            Максимальное количество пользователей, которых нужно вернуть.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Controllers.UsersController.AddUser(System.String,System.String)">
+            <summary>
+            Добавление нового пользователя.
+            </summary>
+            <param name="name">
+            Имя пользователя.
+            </param>
+            <param name="email">
+            Email пользователя.
+            </param>
+            <returns></returns>
+        </member>
+        <member name="T:MessageService.Models.IDataworker`1">
+            <summary>
+            Интерфейс для подгрузки данных из json файлов.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:MessageService.Models.IDataworker`1.LoadData(System.String)">
+            <summary>
+            Метод загрузки коллекций из файла.
+            </summary>
+            <param name="path"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Models.IDataworker`1.SaveData(System.String,System.Collections.Generic.List{`0})">
+            <summary>
+            Метод сохранения данных.
+            </summary>
+            <param name="path"></param>
+        </member>
+        <member name="T:MessageService.Models.MessageModel">
+            <summary>
+            Модель для описания сообщения.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.MessageModel.Subject">
+            <summary>
+            Тема сообщения.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.MessageModel.Text">
+            <summary>
+            Текст сообщения.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.MessageModel.SenderEmail">
+            <summary>
+            Id отправителя.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.MessageModel.ReceiverEmail">
+            <summary>
+            Id получателя.
+            </summary>
+        </member>
+        <member name="M:MessageService.Models.MessageModel.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Конструктор для создания сообщения.
+            </summary>
+            <param name="subject">
+            Тема сообщения.
+            </param>
+            <param name="text">
+            Текст сообщения.
+            </param>
+            <param name="senderEmail">
+            Email отправителя.
+            </param>
+            <param name="receiverEmail">
+            Email получателя.
+            </param>
+        </member>
+        <member name="M:MessageService.Models.MessageModel.GetMessages">
+            <summary>
+            Загрузка сообщений.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Models.MessageModel.SaveMessages(System.Collections.Generic.List{MessageService.Models.MessageModel})">
+            <summary>
+            Сохранение сообщений.
+            </summary>
+            <param name="messages"></param>
+        </member>
+        <member name="T:MessageService.Models.RandomStringBuilder">
+            <summary>
+            Класс для создания рандомных строковых полей.
+            </summary>
+        </member>
+        <member name="M:MessageService.Models.RandomStringBuilder.CreateRandomMessage(System.String,System.String)">
+            <summary>
+            Создание рандомного сообщения.
+            </summary>
+            <param name="senderEmail"></param>
+            <param name="receiverEmail"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Models.RandomStringBuilder.CreateRandomSubject">
+            <summary>
+            Создание рандомной темы сообщения.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Models.RandomStringBuilder.CreateRandomText">
+            <summary>
+            Создание рандомного текста сообщения.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Models.RandomStringBuilder.CreateRandomString(System.Int32)">
+            <summary>
+            Создание рандомной строки.
+            </summary>
+            <param name="length"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Models.RandomStringBuilder.CreateRandomUser">
+            <summary>
+            Метод для создания рандомного пользователя.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:MessageService.Models.UserModel">
+            <summary>
+            Модель для описания пользователя.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.UserModel.UserName">
+            <summary>
+            Имя пользователя.
+            </summary>
+        </member>
+        <member name="P:MessageService.Models.UserModel.Email">
+            <summary>
+            Адрес электронной почты.
+            </summary>
+        </member>
+        <member name="M:MessageService.Models.UserModel.#ctor(System.String,System.String)">
+            <summary>
+            Конструктор для создания пользователя.
+            </summary>
+            <param name="name">
+            Имя пользователя.
+            </param>
+            <param name="email">
+            Почта пользователя.
+            </param>
+        </member>
+        <member name="M:MessageService.Models.UserModel.GetUsers">
+            <summary>
+            Считывание пользователей из файла.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MessageService.Models.UserModel.SaveUsers(System.Collections.Generic.List{MessageService.Models.UserModel})">
+            <summary>
+            Запись всех пользователей в файл.
+            </summary>
+            <param name="users"></param>
+        </member>
+    </members>
+</doc>

@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Text.Json;
-using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
+using System.IO;
+using System.ComponentModel.DataAnnotations;
 
 namespace MessageService.Models
 {
+    /// <summary>
+    /// Модель для описания сообщения.
+    /// </summary>
     [Serializable]
-    public class MessageModel
+    public class MessageModel: IDataworker<MessageModel>
     {
         /// <summary>
         /// Тема сообщения.
@@ -24,20 +24,55 @@ namespace MessageService.Models
         /// <summary>
         /// Id отправителя.
         /// </summary>
-        public int SenderId { get; }
+        [Required()]
+        public string SenderEmail { get; }
 
         /// <summary>
         /// Id получателя.
         /// </summary>
-        public int ReceiverId { get; }
+        [Required()]
+        public string ReceiverEmail { get; }
 
-        public MessageModel(string theme, string text, int senderId, int recipientId)
+        /// <summary>
+        /// Конструктор для создания сообщения.
+        /// </summary>
+        /// <param name="subject">
+        /// Тема сообщения.
+        /// </param>
+        /// <param name="text">
+        /// Текст сообщения.
+        /// </param>
+        /// <param name="senderEmail">
+        /// Email отправителя.
+        /// </param>
+        /// <param name="receiverEmail">
+        /// Email получателя.
+        /// </param>
+        public MessageModel(string subject, string text, string senderEmail, string receiverEmail)
         {
-            Subject = theme;
+            Subject = subject;
             Text = text;
-            SenderId = senderId;
-            ReceiverId = recipientId;
+            SenderEmail = senderEmail;
+            ReceiverEmail = receiverEmail;
         }
 
+        static MessageModel()
+        {
+            messagesPath = @$"./data{Path.DirectorySeparatorChar}messages.json";
+        }
+
+        static string messagesPath;
+
+        /// <summary>
+        /// Загрузка сообщений.
+        /// </summary>
+        /// <returns></returns>
+        public static List<MessageModel> GetMessages() => IDataworker<MessageModel>.LoadData(messagesPath);
+
+        /// <summary>
+        /// Сохранение сообщений.
+        /// </summary>
+        /// <param name="messages"></param>
+        public static void SaveMessages(List<MessageModel> messages) => IDataworker<MessageModel>.SaveData(messagesPath, messages);
     }
 }

@@ -1,37 +1,73 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
-using System.Text.Json;
-using System.Runtime.Serialization;
-using System.Text.Json.Serialization;
+using System.Diagnostics.CodeAnalysis;
+using Newtonsoft.Json;
+using System.IO;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace MessageService.Models
 {
+    /// <summary>
+    /// Модель для описания пользователя.
+    /// </summary>
     [Serializable]
-    public class UserModel
+    public class UserModel: IEquatable<UserModel>, IDataworker<UserModel>
     {
 
         /// <summary>
         /// Имя пользователя.
         /// </summary>
-        public string Name { get; set; }
+        [Required()]
+        public string UserName { get; set; }
         /// <summary>
         /// Адрес электронной почты.
         /// </summary>
+        [Required()]
         public string Email { get; set; }
 
         /// <summary>
-        /// Id пользователя.
+        /// Конструктор для создания пользователя.
         /// </summary>
-        public int ID { get; set; }
-
+        /// <param name="name">
+        /// Имя пользователя.
+        /// </param>
+        /// <param name="email">
+        /// Почта пользователя.
+        /// </param>
         public UserModel(string name, string email)
         {
-            Name = name;
+            UserName = name;
             Email = email;
-            ID = 0;
         }
+
+        static UserModel()
+        {
+            usersPath = @$"./data{Path.DirectorySeparatorChar}users.json";
+        }
+
+        static string usersPath;
+
+
+        public bool Equals([AllowNull] UserModel other) => other.Email == this.Email;
+
+
+        /// <summary>
+        /// Считывание пользователей из файла.
+        /// </summary>
+        /// <returns></returns>
+        public static List<UserModel> GetUsers() => IDataworker<UserModel>.LoadData(usersPath);
+
+
+        /// <summary>
+        /// Запись всех пользователей в файл.
+        /// </summary>
+        /// <param name="users"></param>
+        public static void SaveUsers(List<UserModel> users) => IDataworker<UserModel>.SaveData(usersPath, users.OrderBy(x => x.Email).ToList());
+
+        
+
 
     }
 }
